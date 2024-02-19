@@ -1,0 +1,332 @@
+.flex{display: flex;}
+.row{flex-direction: row;}
+.column{ flex-direction: column}
+.justify-center{justify-content: center;}
+.align-center{align-items: center;}
+.space-between{justify-content: space-between;}
+.gap50{gap:50px}
+.auto-margin{margin-left: auto; margin-right: auto;}
+.relative{position: relative;}
+
+.red{background-color: rgba(255, 0, 0, 0.61);}
+.blue{background-color: rgba(0, 0, 255, 0.441);}
+
+:root {
+    --mainColor: #EE336B;
+    --darkColor: #16222B;
+    --lightDark: #687075;
+    --containerPadding: min(max(20px, calc(5vw)), 100px);
+}
+body{
+    margin:0px;
+    color: var(--lightDark);
+    font-size: 18px;
+    font-family: outfit;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+.logo{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    margin-left: var(--containerPadding);
+}
+.hero-left-meals{
+    position: absolute;
+    width: 600px;
+    height: 800px;
+    left:0px;
+    top: 50%;
+    transform-origin: left;
+    transform: translateY(-50%);
+}
+.hero-right-meals{
+    position: absolute;
+    width: 600px;
+    height: 800px;
+    right:0px;
+    top: 50%;
+    transform-origin: right;
+    transform: translateY(-50%);
+}
+.meal-image-left{
+    transform: rotate(-45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left:0px;
+    box-shadow: -30px 10px 18px -11px rgba(0, 0, 0, 0.15);
+    border-radius: 22%;
+}
+.meal-image-right{
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right:0px;
+    box-shadow: 0px 30px 18px -11px rgba(0, 0, 0, 0.15);
+    border-radius: 22%;
+}
+h1{
+    font-size: min(max(40px, calc(10vw)), 70px);
+    color: var(--darkColor);
+    margin: 0px;
+    line-height: min(max(11vw, 48px), 72px);
+    font-weight: 800;
+    margin-bottom: min(max(9px, calc(2.25vw)), 16px);
+}
+.h1-light-font{
+    font-weight: 500;
+}
+p{
+    font-size: min(max(16px, calc(3.75vw)), 18px);
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: var(--darkColor);
+    font-size: 16px;
+}
+.text-to-center{
+    text-align: center;
+}
+.margin-bot-16{
+    margin-bottom: 16px;
+}
+.margin-bot-34{
+    margin-bottom: min(max(24px, calc(5vw)), 34px);
+}
+.width100{
+    width: 100%;
+}
+.height100{
+    height: 100%;
+}
+.navigation{
+    width:100%;
+    height: 70px;
+    background-color: white;
+}
+.hero{
+    max-width:100%;
+    height: 600px;
+    background-color: #F3F4F5;
+    overflow: hidden;
+}
+.placeholder{
+    width:100%;
+    height: 100svh;
+    background-color: rgb(255, 255, 255);
+}
+.mainCTA{
+    width: 145px;
+    height: 47px;
+    border-radius: 100px;
+    background-color: var(--mainColor);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding-top: 2px;
+}
+.hero-content-wrapper{
+    max-width: 100%;
+}
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    padding-left: var(--containerPadding);
+    padding-right: var(--containerPadding);
+}
+
+
+
+
+/* Remove Nav Links on Smaller Screens --------------------------------------------- */
+
+@media screen and (max-width: 700px) {
+    .navigation a {
+      display: none;
+    }
+    .logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        left: auto;
+    }
+  }
+
+
+
+
+
+
+/* Meals animations (Left) --------------------------------------------- */
+  
+#left01{
+    width: 260px;
+    left: 20%;
+    z-index: 0;
+    opacity: 0;
+    animation: slidingFromLeftAnimation01 1s forwards;
+    animation-delay: 0.02s;
+}
+#left02{
+    width: 233px;
+    left: -80%;
+    top: 45%; 
+    z-index: 1;
+    opacity: 0;
+    animation: slidingFromLeftAnimation02 1s forwards;
+}
+#left03{
+    width: 233px;
+    left: 30%;
+    z-index: 2;
+    opacity: 0;
+    animation: slidingFromLeftAnimation03 1s forwards;
+    animation-delay: 0.1s;
+}    
+
+@keyframes slidingFromLeftAnimation01 {
+    from {
+        top: -50%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        top: 12%;
+        opacity: 1;
+}}
+@keyframes slidingFromLeftAnimation02 {
+    from {
+        left: -80%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        left: 0%;
+        opacity: 1;
+}}
+@keyframes slidingFromLeftAnimation03 {
+    from {
+        top: 200%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        top: 72%;
+        opacity: 1;
+}}
+
+
+
+
+
+/*          Meals animations (Right)          */
+
+#right01{
+    width: 185px;
+    right: 26%;
+    z-index: 0;
+    opacity: 0;
+    animation: slidingFromRightAnimation01 1s forwards;
+    animation-delay: 0.2s;
+}
+#right02{
+    width: 245px;
+    top: 40%; 
+    z-index: 1;
+    opacity: 0;
+    animation: slidingFromRightAnimation02 1s forwards;
+}
+#right03{
+    width: 305px;
+    right: 28%;
+    z-index: 2;
+    opacity: 0;
+    animation: slidingFromRightAnimation03 1s forwards;
+    animation-delay: 0s;
+}
+
+@keyframes slidingFromRightAnimation01 {
+    from {
+        top: -20%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        top: 15%;
+        opacity: 1;
+}}
+@keyframes slidingFromRightAnimation02 {
+    from {
+        right: -80%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        right: 0%;
+        opacity: 1;
+}}
+@keyframes slidingFromRightAnimation03 {
+    from {
+        top: 200%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        top: 75%;
+        opacity: 1;
+}}
+
+
+/*          Hero Section Meals Images Under 800px          */
+
+@media screen and (max-width: 800px) {
+    #left01 {display: none;}
+    #left02 {display: none;}
+    #right01 {display: none;}
+    #right02 {display: none;}
+
+    #right03 {right:45%; animation-delay: 0s;}
+    @keyframes slidingFromRightAnimation03 {
+        from {
+            top: 200%;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        to {
+            top: 101%;
+            opacity: 1;
+    }}
+
+    #left03 {width: 305px; left: 30%; animation-delay: 0s;}
+    @keyframes slidingFromLeftAnimation03 {
+        from {
+            top: -100%;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        to {
+            top: -10%;
+            opacity: 1;
+    }}
+  }
+
+
